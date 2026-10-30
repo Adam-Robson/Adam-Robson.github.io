@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Adam Robson — Brief Portfolio</title>
+  <meta name="description" content="Adam Robson — Brief Portfolio. Résumé, selected work, and projects.">
+  <meta name="author" content="Adam Robson">
+  <link rel="canonical" href="https://adam-robson.github.io/">
+
+  <!-- Social previews -------------------------------------->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://adam-robson.github.io/">
+  <meta property="og:title" content="Adam Robson — Brief Portfolio">
+  <meta property="og:description" content="Résumé, selected work, and projects.">
+  <meta property="og:image" content="https://adam-robson.github.io/assets/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#F7F3EA">
+
+  <link rel="preload" href="assets/fonts/bricolage-grotesque.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <a class="wordmark" href="#top" aria-label="Adam Robson, back to top">Adam Robson</a>
+    <nav aria-label="Sections">
+      <a href="#work">Work</a>
+      <a href="#projects">Projects</a>
+      <a href="#path">Path</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- Hero ---------------------------------------------------------->
+    <section class="hero" id="top" aria-labelledby="hero-name">
+      <div class="hero-terrain" aria-hidden="true"></div>
+      <div class="hero-inner">
+        <h1 id="hero-name">
+          <img class="hero-image" src="assets/og-image.png" alt="Adam Robson" width="851" height="315" fetchpriority="high">
+        </h1>
+        <p class="hero-lede">
+          I build the systems that underpin organizations: data pipelines,
+          automations, and the software that connects them.
+        </p>
+        <p class="hero-now">
+          Currently I am a Data Analyst at an organization that is an
+          affordable-housing property management company, where my work
+          spans data engineering, process automation, and Microsoft 365
+          and Azure administration.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="assets/Adam-Robson-Resume.pdf" target="_blank" rel="noopener">
+            <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#file"/></svg>
+            View résumé
+          </a>
+          <a class="btn btn-quiet" href="assets/Adam-Robson-Resume.pdf" download="Adam-Robson-Resume.pdf">
+            <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#download"/></svg>
+            Download PDF
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Disciplines --------------------------------------------------->
+    <section class="band" aria-labelledby="disciplines-heading">
+      <h2 id="disciplines-heading" class="visually-hidden">What I work on</h2>
+      <div class="disciplines">
+        <article class="discipline">
+          <svg class="discipline-icon" aria-hidden="true"><use href="assets/icons.svg#database"/></svg>
+          <h3>Data</h3>
+          <p>
+            Modeling, transforming, and moving data between the systems a business depends on,
+            with an eye on correctness and repeatability.
+          </p>
+          <p class="tools">
+            T-SQL, Power Query (M), Power BI, Yardi Voyager, SharePoint Lists
+          </p>
+        </article>
+        <article class="discipline">
+          <svg class="discipline-icon" aria-hidden="true"><use href="assets/icons.svg#workflow"/></svg>
+          <h3>Automation</h3>
+          <p>
+            Replacing manual, error-prone routines with scheduled, logged, auditable processes that
+            other people can trust and maintain.
+          </p>
+          <p class="tools">
+            PowerShell, Power Automate, Azure Functions, Azure Blob Storage, Entra ID
+          </p>
+        </article>
+        <article class="discipline">
+          <svg class="discipline-icon" aria-hidden="true"><use href="assets/icons.svg#code"/></svg>
+          <h3>Software</h3>
+          <p>
+            Small, well-separated programs written to SOLID principles, within reason, and shipped as tools other people can use.
+          </p>
+          <p class="tools">
+            TypeScript, Node.js, Python, Bash, YAML and TOML
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Selected work ------------------------------------------------->
+    <section class="section" id="work" aria-labelledby="work-heading">
+      <div class="section-head">
+        <h2 id="work-heading">Selected work</h2>
+        <p>
+          Systems I designed and built in my current role. Details are kept general out of respect for my employer.
+        </p>
+      </div>
+
+      <ul class="work-list">
+        <li class="work-item">
+          <h3>Tenant-to-tenant Microsoft 365 migration</h3>
+          <p>
+            Built the cloud and device migration tooling for a 400-employee move between Microsoft 365 tenants,
+            coordinating ShareGate copy jobs with PowerShell. The migration completed successfully.
+          </p>
+          <p class="tools">PowerShell, ShareGate, Intune, Entra ID</p>
+        </li>
+        <li class="work-item">
+          <h3>HR-to-directory identity sync</h3>
+          <p>
+            A pipeline that reads HR system data and keeps the Microsoft 365 directory current,
+            publishing a log so HR can see which records need correcting at the source.
+          </p>
+          <p class="tools">Entra ID, Microsoft 365, SharePoint</p>
+        </li>
+        <li class="work-item">
+          <h3>Database backup and tiered retention</h3>
+          <p>
+            An Azure Function that backs up the property-management system's database to Blob Storage with
+            daily, weekly, monthly, and yearly retention tiers. It meets a five-year retention requirement
+            and kept the work in-house rather than with an outside vendor.
+          </p>
+          <p class="tools">Azure Functions, SQL Server on Azure, Azure Blob Storage</p>
+        </li>
+        <li class="work-item">
+          <h3>Accounting-to-ERP invoice automation</h3>
+          <p>
+            Transforms an accounting export into regional import files for the property-management system,
+            archives each run for audit, and delivers the files over SFTP without anyone touching them.
+          </p>
+          <p class="tools">Power Query (M), Power BI, Power Automate, Azure Storage SFTP</p>
+        </li>
+        <li class="work-item">
+          <h3>Compliance document pipeline</h3>
+          <p>
+            Splits multi-page HUD-50059 certification packets and extracts structured fields to JSON
+            so each form can be filed and archived automatically.
+          </p>
+          <p class="tools">PDF processing, structured extraction, JSON</p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Projects ------------------------------------------------------>
+    <section class="section" id="projects" aria-labelledby="projects-heading">
+      <div class="section-head">
+        <h2 id="projects-heading">Projects</h2>
+        <p>Things I build on my own time.</p>
+      </div>
+
+      <div class="projects">
+        <article class="project">
+          <svg class="project-icon" aria-hidden="true"><use href="assets/icons.svg#package"/></svg>
+          <h3>Shufffle</h3>
+          <p>
+            A zero-dependency, configuration-driven reverse proxy for Node.js. Routes and upstreams are declared in JSON, and it runs either from the command line or embedded in an app.
+          </p>
+          <p class="tools">TypeScript, Node.js, published on npm</p>
+          <ul class="links">
+            <li><a href="https://github.com/responsedotok/shufffle" target="_blank" rel="noopener">Source on GitHub<svg class="icon" aria-hidden="true"><use href="assets/icons.svg#arrow"/></svg></a></li>
+            <li><a href="https://www.npmjs.com/package/@responsedotok/shufffle" target="_blank" rel="noopener">Package on npm<svg class="icon" aria-hidden="true"><use href="assets/icons.svg#arrow"/></svg></a></li>
+          </ul>
+        </article>
+        <article class="project">
+          <svg class="project-icon" aria-hidden="true"><use href="assets/icons.svg#code"/></svg>
+          <h3>lefog.xyz</h3>
+          <p>
+            The home for the music I write. Audio streams from Cloudflare R2, accounts run through Clerk, and the site deploys from GitHub to Vercel.
+          </p>
+          <p class="tools">TypeScript, Cloudflare R2, Clerk, Vercel</p>
+          <ul class="links">
+            <li><a href="https://lefog.xyz" target="_blank" rel="noopener">Visit the site<svg class="icon" aria-hidden="true"><use href="assets/icons.svg#arrow"/></svg></a></li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- Path ---------------------->
+    <section class="section" id="path" aria-labelledby="path-heading">
+      <div class="section-head">
+        <h2 id="path-heading">Path</h2>
+        <p>I came to engineering from the law, where precision, documentation, and deadlines are not optional. That habit came with me.</p>
+      </div>
+
+      <ol class="timeline">
+        <li>
+          <span class="when">2023 – now</span>
+          <div>
+            <h3>Data Analyst, CCI</h3>
+            <p>Joined in 2023. Data, automation, and Microsoft 365 and Azure engineering.</p>
+          </div>
+        </li>
+        <li>
+          <span class="when">2021 – 2022</span>
+          <div>
+            <h3>Full-stack development, Alchemy Code Lab</h3>
+            <p>An intensive 18-month program in JavaScript, APIs, and web development.</p>
+          </div>
+        </li>
+        <li>
+          <span class="when">2020 – 2021</span>
+          <div>
+            <h3>Practice Assistant, K&amp;L Gates LLP</h3>
+          </div>
+        </li>
+        <li>
+          <span class="when">2017 – 2020</span>
+          <div>
+            <h3>Legal Assistant, James F. Ambrose, P.C.</h3>
+          </div>
+        </li>
+        <li>
+          <span class="when">Earlier</span>
+          <div>
+            <h3>BA in Philosophy</h3>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- Principles -------------->
+    <section class="section principles-section" aria-labelledby="principles-heading">
+      <div class="section-head">
+        <h2 id="principles-heading">How I like to build</h2>
+      </div>
+      <dl class="principles">
+        <div>
+          <dt>Separate concerns</dt>
+          <dd>Break a system into parts that each do one job, so any part can change without the others noticing.</dd>
+        </div>
+        <div>
+          <dt>Don't repeat yourself</dt>
+          <dd>Pull shared logic into one place, but only once the repetition is real rather than imagined.</dd>
+        </div>
+        <div>
+          <dt>Keep it simple</dt>
+          <dd>Prefer the design that the next person can read and maintain over the one that is merely clever.</dd>
+        </div>
+        <div>
+          <dt>Material honesty</dt>
+          <dd>Let the tools and data be what they are. Work with their grain instead of disguising it.</dd>
+        </div>
+      </dl>
+    </section>
+
+    <!-- Contact ------------------------------------------------------->
+    <section class="section contact" id="contact" aria-labelledby="contact-heading">
+      <h2 id="contact-heading">Let's talk</h2>
+      <p>If you're hiring, collaborating, or just curious about something here, LinkedIn is the fastest way to reach me.</p>
+      <ul class="contact-links">
+        <li><a href="https://linkedin.com/in/adamrayrobson" target="_blank" rel="noopener">LinkedIn<svg class="icon" aria-hidden="true"><use href="assets/icons.svg#arrow"/></svg></a></li>
+        <li><a href="https://github.com/adam-robson" target="_blank" rel="noopener">GitHub<svg class="icon" aria-hidden="true"><use href="assets/icons.svg#arrow"/></svg></a></li>
+        <li><a href="https://x.com/adamrayrobson" target="_blank" rel="noopener">X<svg class="icon" aria-hidden="true"><use href="assets/icons.svg#arrow"/></svg></a></li>
+        <li><a href="assets/Adam-Robson-Resume.pdf" download="Adam-Robson-Resume.pdf">Résumé (PDF)<svg class="icon" aria-hidden="true"><use href="assets/icons.svg#download"/></svg></a></li>
+        <!-- To list an email address, uncomment and edit:
+        <li><a href="mailto:you@example.com">Email</a></li>
+        -->
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 Adam Robson. Hand-written HTML and CSS, served by GitHub Pages.</p>
+  </footer>
+</body>
+</html>
