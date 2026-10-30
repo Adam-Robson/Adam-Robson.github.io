@@ -1,46 +1,31 @@
-# Adam-Robson 🎈
+# adam-robson.github.io
 
-![image of tectonic plates with a splash of earth](./plate.png)
+Source for my personal site, live at **<https://adam-robson.github.io>**.
 
-## I am currently working on
+I build data pipelines, automation, and the software that connects them, working in TypeScript, Python, PowerShell, and T-SQL.
 
-- refining how i implement projects and strategies
-- improving my communication
-- providing guidance for local usage
-- updating existential dependencies
-- strengthening quality assurance by thoroughly questioning
-- continuously integrating
-- promptly addressing insecurities
-- addressing and then reinforcing vulnerabilities
+- Résumé: [view or download the PDF](https://adam-robson.github.io/assets/Adam-Robson-Resume.pdf)
+- LinkedIn: [linkedin.com/in/adamrayrobson](https://linkedin.com/in/adamrayrobson)
 
-## I currently enjoy
+## How the site is built
 
-### Separating Concerns
+Plain HTML and CSS with no build step and no JavaScript. GitHub Pages serves the files as they are.
 
-Breaking down the system into distinct parts
+```txt
+index.html              page content
+css/styles.css          design tokens, then styles section by section
+assets/
+  Adam-Robson-Resume.pdf   résumé linked from the page
+  contours.svg             generated topographic line art behind the hero
+  icons.svg                icon sprite (Lucide, ISC license)
+  favicon.svg
+  og-image.png             link-preview image (1200 × 630)
+  fonts/                   self-hosted Bricolage Grotesque and Literata (SIL OFL)
+.nojekyll               tells GitHub Pages to skip Jekyll processing
+```
 
-### Avoiding duplication
+To preview locally:
 
-Abstract common logic for reuse
-
-### Simplicity
-
-Seek clarity and focus in design
-
-### Material Honesty
-
-Bring the inherent qualities & textures into focus
-
-## This space
-
-This is a space where source code can be safely deployed, where resources
-can be played with, where learning new things is encouraged, and development
-and sharing is celebrated.
-
-## Contact Detail 🧶
-
-If you have any questions or are curious about working with the owner of
-this repository, please feel free to touch base through
-[linkedin](https://linkedin.com/in/adamrayrobson),
-[X](https://x.com/adamrayrobson),
-or [facebook](https://facebook.com/thisisanatom).
+```bash
+python3 -m http.server 8000   # then open http://localhost:8000
+```
