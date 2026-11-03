@@ -1,25 +1,32 @@
-/* ==========================================================================
-   adam-robson.github.io
-   Tokens first, then base, then layout by section (top to bottom of page).
-   ========================================================================== */
+/*
+==========================================================================
+Repository: adam-robson.github.io
+Below: tokens first, base, then layout by section.
+==========================================================================
 
-/* ---- Fonts (self-hosted, SIL Open Font License; see assets/fonts) ------- */
+---- Fonts (self-hosted; SIL Open Font License, Version 1.1; see assets/fonts) -------
+*/
 @font-face {
-  font-family: "Bricolage Grotesque";
-  src: url("../assets/fonts/bricolage-grotesque.woff2") format("woff2-variations");
+  font-family: "Sofia Sans Semi Condensed", Arial, Helvetica, system-ui, sans-serif;
+  src: url("../assets/fonts/SofiaSansSemiCondensed-VariableFont_wght.ttf") format("truetype");
   font-weight: 200 800;
   font-display: swap;
 }
+
 @font-face {
-  font-family: "Literata";
-  src: url("../assets/fonts/literata.woff2") format("woff2-variations");
-  font-weight: 200 900;
-  font-display: swap;
+  font-family: "Sofia Sans Semi Condensed", Arial, Helvetica, system-ui, sans-serif;
+  src: url("../assets/fonts/SofiaSansSemiCondensed-Italic-VariableFont_wght.ttf") format("truetype");
+  font-weight: 200 800;
+  font-style: italic;
 }
 
-/* ---- Tokens ------------------------------------------------------------- */
+/*
+---- Tokens --------------------------------------------------------------
+*/
 :root {
-  /* Palette: cream paper, slate ink, verdigris and ochre mineral accents */
+  /*
+  cream paper, slate ink, verdigris and ochre with mineral accents
+  */
   --paper:   #F7F3EA;
   --surface: #EFE9DC;
   --ink:     #1E2B2F;
@@ -30,50 +37,71 @@
   --terrain: #2E6B64;
   --terrain-opacity: .28;
 
-  --font-display: "Bricolage Grotesque", "Avenir Next", system-ui, sans-serif;
-  --font-body:    "Literata", Georgia, "Times New Roman", serif;
+  --font-display: "Sofia Sans Semi Condensed", Arial, Helvetica, system-ui, sans-serif;
+  --font-italic: "Sofia Sans Semi Condensed", Arial, Helvetica, system-ui, sans-serif;
 
-  /* Type scale (perfect fourth, 1.333) */
+  /*
+  Type scale (1.333, perfect fourth)
+  */
   --step--1: .85rem;
   --step-0:  1.0625rem;
   --step-1:  1.333rem;
   --step-2:  1.777rem;
   --step-3:  2.369rem;
 
-  --measure: 64ch;
-  --page:    72rem;
-  --gutter:  clamp(1rem, 4vw, 3rem);
-  --radius:  6px;
+  --measure: 64ch; /* optimal line length for readability */
+  --page:    72rem; /* maximum page width */
+  --gutter:  clamp(1rem, 4vw, 3rem); /* responsive spacing around content */
+  --radius:  6px; /* border radius for rounded elements */
 
-  /* Light only: the hero artwork is black on white, so the page stays light. */
-  color-scheme: light;
+  color-scheme: light dark;
 }
 
-/* ---- Base --------------------------------------------------------------- */
-*, *::before, *::after { box-sizing: border-box; }
+/*
+---- Base ------------------------------------------------------------
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
-html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
 
 body {
   margin: 0;
   background: var(--paper);
   color: var(--ink);
-  font-family: var(--font-body);
+  font-family: var(--font-display);
   font-size: var(--step-0);
   line-height: 1.65;
   overflow-x: hidden;
 }
 
-h1, h2, h3 {
-  font-family: var(--font-display);
+h1,
+h2,
+h3 {
+  font-family: var(--font-italic);
   line-height: 1.15;
   margin: 0;
 }
 
-p { margin: 0; }
+p {
+  margin: 0;
+}
 
-a { color: var(--accent); text-underline-offset: .2em; text-decoration-thickness: 1px; }
-a:hover { text-decoration-thickness: 2px; }
+a {
+  color: var(--accent);
+  text-underline-offset: .2em;
+  text-decoration-thickness: 1px;
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
 
 :focus-visible {
   outline: 2px solid var(--accent);
@@ -89,8 +117,9 @@ a:hover { text-decoration-thickness: 2px; }
 }
 
 .visually-hidden {
-  position: absolute !important;
-  width: 1px; height: 1px;
+  position: absolute;
+  width: 1px;
+  height: 1px;
   overflow: hidden;
   clip: rect(0 0 0 0);
   white-space: nowrap;
@@ -106,9 +135,14 @@ a:hover { text-decoration-thickness: 2px; }
   border-radius: var(--radius);
   z-index: 10;
 }
-.skip:focus { top: .75rem; }
 
-/* Tool lists appear under several kinds of content; one shared style. */
+.skip:focus {
+  top: .75rem;
+}
+
+/*
+Tool lists: one shared style under several kinds of content.
+*/
 .tools {
   margin-top: .75rem;
   font-family: var(--font-display);
@@ -116,7 +150,9 @@ a:hover { text-decoration-thickness: 2px; }
   color: var(--muted);
 }
 
-/* ---- Header ------------------------------------------------------------- */
+/*
+---- Header -------------------------------------------------------------
+*/
 .site-header {
   max-width: var(--page);
   margin: 0 auto;
@@ -136,15 +172,27 @@ a:hover { text-decoration-thickness: 2px; }
   text-decoration: none;
 }
 
-.site-header nav { display: flex; gap: clamp(.75rem, 2.5vw, 1.75rem); }
-.site-header nav a { color: var(--muted); text-decoration: none; }
-.site-header nav a:hover { color: var(--ink); }
+.site-header nav {
+  display: flex;
+  gap: clamp(.75rem, 2.5vw, 1.75rem);
+}
 
-/* ---- Hero: the one bold moment on the page ----------------------------- */
+.site-header nav a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.site-header nav a:hover {
+  color: var(--ink);
+}
+
+/*
+---- Hero: bold moment on page ---------------------------------
+*/
 .hero {
   position: relative;
   isolation: isolate;
-  margin-top: -4rem;            /* let the terrain run up behind the header */
+  margin-top: -4rem; /* let terrain run up behind header */
   padding: calc(4rem + clamp(3rem, 9vw, 7rem)) 0 clamp(3rem, 8vw, 6rem);
 }
 
@@ -154,8 +202,8 @@ a:hover { text-decoration-thickness: 2px; }
   z-index: -1;
   background: var(--terrain);
   opacity: var(--terrain-opacity);
-  -webkit-mask-image: url("../assets/contours.svg"), linear-gradient(to bottom, #000 55%, transparent);
-          mask-image: url("../assets/contours.svg"), linear-gradient(to bottom, #000 55%, transparent);
+  -webkit-mask-image: linear-gradient(to bottom, #000 55%, transparent);
+          mask-image: linear-gradient(to bottom, #000 55%, transparent);
   -webkit-mask-size: cover, 100% 100%;
           mask-size: cover, 100% 100%;
   -webkit-mask-position: center, center;
@@ -166,13 +214,26 @@ a:hover { text-decoration-thickness: 2px; }
 }
 
 @keyframes surface {
-  from { opacity: 0; transform: translateY(12px); }
-  to   { opacity: var(--terrain-opacity); transform: none; }
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to   {
+    opacity: var(--terrain-opacity);
+     transform: none;
+    }
 }
 
-.hero-inner { max-width: var(--page); margin: 0 auto; padding-inline: var(--gutter); }
+.hero-inner {
+  max-width: var(--page);
+  margin: 0 auto;
+  padding-inline: var(--gutter);
+}
 
-.hero h1 { line-height: 0; }
+.hero h1 {
+  line-height: 0;
+}
 
 .hero-image {
   display: block;
@@ -212,12 +273,26 @@ a:hover { text-decoration-thickness: 2px; }
   text-decoration: none;
   border: 1.5px solid var(--ink);
 }
-.btn-primary { background: var(--ink); color: var(--paper); }
-.btn-primary:hover { background: var(--accent); border-color: var(--accent); }
-.btn-quiet { color: var(--ink); background: transparent; }
-.btn-quiet:hover { background: var(--surface); }
 
-/* ---- Disciplines band --------------------------------------------------- */
+.btn-primary {
+  background: var(--ink); color: var(--paper);
+}
+
+.btn-primary:hover {
+  background: var(--accent); border-color: var(--accent);
+}
+
+.btn-quiet {
+  color: var(--ink); background: transparent;
+}
+
+.btn-quiet:hover {
+  background: var(--surface);
+}
+
+/*
+---- Disciplines band ---------------------------------------------------
+*/
 .band {
   background: var(--surface);
   border-block: 1px solid var(--rule);
@@ -231,26 +306,52 @@ a:hover { text-decoration-thickness: 2px; }
   grid-template-columns: repeat(3, 1fr);
 }
 
-.discipline { padding-inline: clamp(1rem, 2.5vw, 2rem); }
-.discipline:first-child { padding-left: 0; }
-.discipline:last-child { padding-right: 0; }
-.discipline + .discipline { border-left: 1px solid var(--rule); }
+.discipline {
+  padding-inline: clamp(1rem, 2.5vw, 2rem);
+}
 
-.discipline-icon { width: 1.75rem; height: 1.75rem; color: var(--accent); }
-.discipline h3 { font-size: var(--step-1); margin: .75rem 0 .5rem; }
+.discipline:first-child {
+  padding-left: 0;
+}
 
-/* ---- Generic section ---------------------------------------------------- */
+.discipline:last-child {
+  padding-right: 0;
+}
+
+.discipline + .discipline {
+  border-left: 1px solid var(--rule);
+}
+
+.discipline-icon {
+  width: 1.75rem; height: 1.75rem; color: var(--accent);
+}
+
+.discipline h3 {
+  font-size: var(--step-1); margin: .75rem 0 .5rem;
+}
+
+/*
+---- Generic section ----------------------------------------------------
+*/
 .section {
   max-width: var(--page);
   margin: 0 auto;
   padding: clamp(3.5rem, 8vw, 6rem) var(--gutter) 0;
 }
 
-.section-head { max-width: var(--measure); margin-bottom: 2rem; }
-.section-head h2 { font-size: var(--step-3); font-weight: 800; letter-spacing: -.02em; }
-.section-head p { margin-top: .6rem; color: var(--muted); }
+.section-head {
+  max-width: var(--measure); margin-bottom: 2rem;
+}
+.section-head h2 {
+  font-size: var(--step-3); font-weight: 800; letter-spacing: -.02em;
+}
+.section-head p {
+  margin-top: .6rem; color: var(--muted);
+}
 
-/* ---- Selected work ------------------------------------------------------ */
+/*
+---- Selected work ------------------------------------------------------
+*/
 .work-list { list-style: none; margin: 0; padding: 0; }
 
 .work-item {
@@ -260,12 +361,22 @@ a:hover { text-decoration-thickness: 2px; }
   padding: 1.6rem 0;
   border-top: 1px solid var(--rule);
 }
-.work-item:last-child { border-bottom: 1px solid var(--rule); }
-.work-item h3 { font-size: var(--step-1); font-weight: 600; grid-row: span 2; }
-.work-item p { max-width: var(--measure); }
-.work-item .tools { margin-top: 0; }
+.work-item:last-child {
+  border-bottom: 1px solid var(--rule);
+}
+.work-item h3 {
+  font-size: var(--step-1); font-weight: 600; grid-row: span 2;
+}
+.work-item p {
+  max-width: var(--measure);
+}
+.work-item .tools {
+  margin-top: 0;
+}
 
-/* ---- Projects ----------------------------------------------------------- */
+/*
+---- Projects -----------------------------------------------------------
+*/
 .projects {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -276,8 +387,12 @@ a:hover { text-decoration-thickness: 2px; }
   padding-top: 1.25rem;
   border-top: 3px solid var(--accent);
 }
-.project-icon { width: 1.5rem; height: 1.5rem; color: var(--accent); }
-.project h3 { font-size: var(--step-2); font-weight: 800; margin: .5rem 0 .5rem; }
+.project-icon {
+  width: 1.5rem; height: 1.5rem; color: var(--accent);
+}
+.project h3 {
+  font-size: var(--step-2); font-weight: 800; margin: .5rem 0 .5rem;
+}
 
 .links {
   list-style: none;
@@ -289,10 +404,16 @@ a:hover { text-decoration-thickness: 2px; }
   font-family: var(--font-display);
   font-weight: 600;
 }
-.links a, .contact-links a { display: inline-flex; align-items: center; gap: .3rem; }
+.links a, .contact-links a {
+  display: inline-flex; align-items: center; gap: .3rem;
+}
 
-/* ---- Path (timeline) ---------------------------------------------------- */
-.timeline { list-style: none; margin: 0; padding: 0; }
+/*
+---- Path (timeline) ----------------------------------------------------
+*/
+.timeline {
+  list-style: none; margin: 0; padding: 0;
+}
 
 .timeline li {
   display: grid;
@@ -301,7 +422,9 @@ a:hover { text-decoration-thickness: 2px; }
   padding: 1rem 0;
   border-top: 1px solid var(--rule);
 }
-.timeline li:last-child { border-bottom: 1px solid var(--rule); }
+.timeline li:last-child {
+  border-bottom: 1px solid var(--rule);
+}
 
 .when {
   font-family: var(--font-display);
@@ -310,10 +433,20 @@ a:hover { text-decoration-thickness: 2px; }
   font-weight: 600;
   padding-top: .1rem;
 }
-.timeline h3 { font-size: var(--step-0); font-weight: 600; font-family: var(--font-display); }
-.timeline p { color: var(--muted); margin-top: .25rem; max-width: var(--measure); }
+.timeline h3 {
+  font-size: var(--step-0);
+  font-weight: 600;
+  font-family: var(--font-display);
+}
+.timeline p {
+  color: var(--muted);
+  margin-top: .25rem;
+  max-width: var(--measure);
+}
 
-/* ---- Principles --------------------------------------------------------- */
+/*
+---- Principles ---------------------------------------------------------
+*/
 .principles {
   margin: 0;
   display: grid;
@@ -325,12 +458,28 @@ a:hover { text-decoration-thickness: 2px; }
   font-size: var(--step-1);
   font-weight: 600;
 }
-.principles dd { margin: .35rem 0 0; color: var(--muted); max-width: 42ch; }
+.principles dd {
+  margin: .35rem 0 0;
+  color: var(--muted);
+  max-width: 42ch;
+}
 
-/* ---- Contact ------------------------------------------------------------ */
-.contact { padding-bottom: clamp(3.5rem, 8vw, 6rem); }
-.contact h2 { font-size: clamp(2.5rem, 7vw, 4.5rem); font-weight: 800; letter-spacing: -.03em; }
-.contact > p { margin-top: .75rem; max-width: var(--measure); color: var(--muted); }
+/*
+---- Contact --------------------------------------------------------------
+*/
+.contact {
+  padding-bottom: clamp(3.5rem, 8vw, 6rem);
+}
+.contact h2 {
+  font-size: clamp(2.5rem, 7vw, 4.5rem);
+  font-weight: 800;
+  letter-spacing: -.03em;
+}
+.contact > p {
+  margin-top: .75rem;
+  max-width: var(--measure);
+  color: var(--muted);
+}
 
 .contact-links {
   list-style: none;
@@ -344,7 +493,9 @@ a:hover { text-decoration-thickness: 2px; }
   font-weight: 600;
 }
 
-/* ---- Footer ------------------------------------------------------------- */
+/*
+---- Footer -------------------------------------------------------------
+*/
 .site-footer {
   border-top: 1px solid var(--rule);
   padding: 1.5rem var(--gutter);
@@ -353,31 +504,67 @@ a:hover { text-decoration-thickness: 2px; }
   color: var(--muted);
 }
 
-/* ---- Responsive --------------------------------------------------------- */
+/*
+---- Responsive ---------------------------------------------------------
+*/
 @media (max-width: 52rem) {
-  .disciplines { grid-template-columns: 1fr; gap: 1.75rem; }
-  .discipline { padding: 0; }
-  .discipline + .discipline { border-left: 0; border-top: 1px solid var(--rule); padding-top: 1.75rem; }
+  .disciplines {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+  .discipline {
+    padding: 0;
+   }
+  .discipline + .discipline {
+    border-left: 0;
+    border-top: 1px solid var(--rule);
+    padding-top: 1.75rem;
+  }
 
-  .work-item { grid-template-columns: 1fr; }
-  .work-item h3 { grid-row: auto; }
+  .work-item {
+    grid-template-columns: 1fr;
+  }
+  .work-item h3 {
+    grid-row: auto;
+  }
 
-  .projects, .principles { grid-template-columns: 1fr; }
+  .projects, .principles {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 30rem) {
-  .site-header { flex-direction: column; gap: .25rem; }
-  .timeline li { grid-template-columns: 1fr; gap: .25rem; }
-  .btn { flex: 1 1 100%; justify-content: center; }
+  .site-header {
+    flex-direction: column;
+    gap: .25rem;
+  }
+  .timeline li {
+    grid-template-columns: 1fr;
+    gap: .25rem;
+  }
+  .btn {
+    flex: 1 1 100%;
+    justify-content: center;
+  }
 }
 
-/* ---- Motion and print --------------------------------------------------- */
+/*
+---- Motion and print ---------------------------------------
+*/
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  .hero-terrain { animation: none; }
+  html {
+    scroll-behavior: auto;
+  }
+  .hero-terrain {
+    animation: none;
+  }
 }
 
 @media print {
-  .site-header nav, .hero-terrain, .hero-actions, .skip { display: none; }
-  .band { background: none; }
+  .site-header nav, .hero-terrain, .hero-actions, .skip {
+    display: none;
+  }
+  .band {
+    background: none;
+  }
 }
