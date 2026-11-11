@@ -7,38 +7,44 @@ Below: tokens first, base, then layout by section.
 ---- Fonts (self-hosted; SIL Open Font License, Version 1.1; see assets/fonts) -------
 */
 @font-face {
-  font-family: "Sofia Sans Semi Condensed", Arial, Helvetica, system-ui, sans-serif;
-  src: url("../assets/fonts/SofiaSansSemiCondensed-VariableFont_wght.ttf") format("truetype");
+  font-family: "Karla";
+  src: url("../assets/fonts/Karla-VariableFont_wght.ttf") format("truetype");
   font-weight: 200 800;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Sofia Sans Semi Condensed", Arial, Helvetica, system-ui, sans-serif;
-  src: url("../assets/fonts/SofiaSansSemiCondensed-Italic-VariableFont_wght.ttf") format("truetype");
-  font-weight: 200 800;
-  font-style: italic;
+  font-family: "Bitter";
+  src: url("../assets/fonts/Bitter-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-display: swap;
 }
 
 /*
 ---- Tokens --------------------------------------------------------------
 */
 :root {
-  /*
-  cream paper, slate ink, verdigris and ochre with mineral accents
-  */
-  --paper:   #F7F3EA;
-  --surface: #EFE9DC;
-  --ink:     #1E2B2F;
-  --muted:   #55656A;
-  --rule:    #DDD5C5;
-  --accent:  #2E6B64;
-  --ochre:   #9A6F1C;
-  --terrain: #2E6B64;
+  --paper:   #f7f7f7ff;
+  --surface: #efe9dcff;
+  --ink:     #1e2021ff;
+  --muted:   #45495bff;
+  --rule:    #ddd5c5ff;
+  --accent:  #36393aff;
+  --ochre:   #e7aa40ff;
+  --terrain: #bcb88aff;
   --terrain-opacity: .28;
 
-  --font-display: "Sofia Sans Semi Condensed", Arial, Helvetica, system-ui, sans-serif;
-  --font-italic: "Sofia Sans Semi Condensed", Arial, Helvetica, system-ui, sans-serif;
+  /*
+  Role tokens: what text, links and lines use. Sections re-point these at
+  other palette colors as the background darkens (see "Page color journey").
+  */
+  --text:      var(--ink);
+  --text-soft: var(--muted);
+  --link:      var(--accent);
+  --line:      var(--rule);
+
+  --font-title: "Bitter", "Times New Roman", system-ui, serif;
+  --font-display: "Karla", Arial, Helvetica, system-ui, sans-serif;
 
   /*
   Type scale (1.333, perfect fourth)
@@ -49,10 +55,12 @@ Below: tokens first, base, then layout by section.
   --step-2:  1.777rem;
   --step-3:  2.369rem;
 
-  --measure: 64ch; /* optimal line length for readability */
-  --page:    72rem; /* maximum page width */
-  --gutter:  clamp(1rem, 4vw, 3rem); /* responsive spacing around content */
-  --radius:  6px; /* border radius for rounded elements */
+  --measure: 64ch; /* optimal line length */
+  --page:    72rem; /* max page width */
+  --gutter:  clamp(1rem, 4vw, 3rem); /* responsive spacing */
+  --radius:  6px; /* rounded elements */
+  /* side padding that keeps content in the --page column while backgrounds run full width */
+  --inline:  max(var(--gutter), calc((100% - var(--page)) / 2 + var(--gutter)));
 
   color-scheme: light dark;
 }
@@ -74,7 +82,7 @@ html {
 body {
   margin: 0;
   background: var(--paper);
-  color: var(--ink);
+  color: var(--text);
   font-family: var(--font-display);
   font-size: var(--step-0);
   line-height: 1.65;
@@ -84,7 +92,7 @@ body {
 h1,
 h2,
 h3 {
-  font-family: var(--font-italic);
+  font-family: var(--font-title);
   line-height: 1.15;
   margin: 0;
 }
@@ -94,7 +102,7 @@ p {
 }
 
 a {
-  color: var(--accent);
+  color: var(--link);
   text-underline-offset: .2em;
   text-decoration-thickness: 1px;
 }
@@ -104,7 +112,7 @@ a:hover {
 }
 
 :focus-visible {
-  outline: 2px solid var(--accent);
+  outline: 2px solid var(--link);
   outline-offset: 3px;
   border-radius: 2px;
 }
@@ -147,7 +155,28 @@ Tool lists: one shared style under several kinds of content.
   margin-top: .75rem;
   font-family: var(--font-display);
   font-size: var(--step--1);
-  color: var(--muted);
+  color: var(--text-soft);
+}
+
+/*
+Logo variant: a row of single-color brand marks in the current text color.
+*/
+.tools-logos {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem .9rem;
+}
+
+.tools-logos li {
+  display: flex;
+  cursor: default;
+}
+
+.logo {
+  width: 1.25rem;
+  height: 1.25rem;
 }
 
 /*
@@ -158,12 +187,22 @@ Tool lists: one shared style under several kinds of content.
   margin: 0 auto;
   padding: 1.25rem var(--gutter);
   display: flex;
+  flex-direction: row;
   align-items: baseline;
   justify-content: space-between;
   gap: 1rem;
   font-family: var(--font-display);
   position: relative;
   z-index: 2;
+}
+
+.site-header-logo {
+  position: absolute;
+  top: 0;
+  z-index: 0; /* sits behind the nav */
+  display: block;
+  width: 120px;
+  height: 120px;
 }
 
 .wordmark {
@@ -173,6 +212,8 @@ Tool lists: one shared style under several kinds of content.
 }
 
 .site-header nav {
+  position: relative;
+  z-index: 1; /* above the logo */
   display: flex;
   gap: clamp(.75rem, 2.5vw, 1.75rem);
 }
@@ -193,6 +234,12 @@ Tool lists: one shared style under several kinds of content.
   position: relative;
   isolation: isolate;
   margin-top: -4rem; /* let terrain run up behind header */
+  /* hands off to the band on surface, so there is no dip back to paper */
+  background: linear-gradient(to bottom,
+    var(--paper) 35%,
+    color-mix(in oklab, var(--paper) 80%, var(--surface)) 55%,
+    color-mix(in oklab, var(--paper) 35%, var(--surface)) 78%,
+    var(--surface));
   padding: calc(4rem + clamp(3rem, 9vw, 7rem)) 0 clamp(3rem, 8vw, 6rem);
 }
 
@@ -202,8 +249,9 @@ Tool lists: one shared style under several kinds of content.
   z-index: -1;
   background: var(--terrain);
   opacity: var(--terrain-opacity);
-  -webkit-mask-image: linear-gradient(to bottom, #000 55%, transparent);
-          mask-image: linear-gradient(to bottom, #000 55%, transparent);
+  /* eased fade: long, soft tail instead of a straight ramp */
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 30%, rgb(0 0 0 / .8) 50%, rgb(0 0 0 / .5) 68%, rgb(0 0 0 / .22) 84%, rgb(0 0 0 / .06) 94%, transparent 100%);
+          mask-image: linear-gradient(to bottom, #000 0%, #000 30%, rgb(0 0 0 / .8) 50%, rgb(0 0 0 / .5) 68%, rgb(0 0 0 / .22) 84%, rgb(0 0 0 / .06) 94%, transparent 100%);
   -webkit-mask-size: cover, 100% 100%;
           mask-size: cover, 100% 100%;
   -webkit-mask-position: center, center;
@@ -240,17 +288,18 @@ Tool lists: one shared style under several kinds of content.
   width: 100%;
   height: auto;
   border-radius: var(--radius);
+  opacity: 0.7;
 }
 
 .hero-lede {
-  max-width: 30ch;
+  max-width: 40ch;
   margin-top: clamp(1.5rem, 4vw, 2.5rem);
   font-size: clamp(var(--step-1), 3.2vw, var(--step-2));
   line-height: 1.3;
 }
 
 .hero-now {
-  max-width: var(--measure);
+  max-width: 35ch;
   margin-top: 1.25rem;
   color: var(--muted);
 }
@@ -294,8 +343,8 @@ Tool lists: one shared style under several kinds of content.
 ---- Disciplines band ---------------------------------------------------
 */
 .band {
+  /* picks up from the hero on surface; the next section continues on surface */
   background: var(--surface);
-  border-block: 1px solid var(--rule);
 }
 
 .disciplines {
@@ -334,9 +383,76 @@ Tool lists: one shared style under several kinds of content.
 ---- Generic section ----------------------------------------------------
 */
 .section {
-  max-width: var(--page);
-  margin: 0 auto;
-  padding: clamp(3.5rem, 8vw, 6rem) var(--gutter) 0;
+  /* --blend: how tall the color fade is; --breathe: clear space between the fade and the text */
+  --blend: clamp(3.5rem, 8vw, 6rem);
+  --breathe: 0rem;
+  padding: calc(var(--blend) + var(--breathe)) var(--inline) clamp(1.5rem, 4vw, 3rem);
+  background: var(--bg, transparent);
+  color: var(--text);
+}
+
+/*
+---- Page color journey -------------------------------------------------
+Each section starts on the color the one before it ended on, and finishes
+blending inside its own top padding, so the joins are invisible at any width
+and all text sits on a solid color. Text colors switch with the background
+(contrast, WCAG): ink on surface 13.5:1, ink on terrain 8:1,
+accent on terrain 5.8:1, paper on ink 15:1, rule on ink 11:1, ochre on ink 8:1.
+*/
+#work {
+  --bg: var(--surface);
+}
+
+/*
+Fades are eased (slow start, slow finish) with in-between stops mixed from
+the two palette colors, so there is no visible line where a blend begins or ends.
+*/
+#projects {
+  --blend: clamp(8rem, 18vw, 14rem);
+  --breathe: clamp(1.5rem, 4vw, 3rem);
+  --bg: linear-gradient(to bottom,
+    var(--surface),
+    color-mix(in oklab, var(--surface) 94%, var(--terrain)) calc(var(--blend) * .15),
+    color-mix(in oklab, var(--surface) 75%, var(--terrain)) calc(var(--blend) * .35),
+    color-mix(in oklab, var(--surface) 50%, var(--terrain)) calc(var(--blend) * .5),
+    color-mix(in oklab, var(--surface) 25%, var(--terrain)) calc(var(--blend) * .65),
+    color-mix(in oklab, var(--surface) 6%, var(--terrain)) calc(var(--blend) * .85),
+    var(--terrain) var(--blend));
+  --text-soft: var(--accent); /* muted is only 4.4:1 on terrain */
+}
+
+#path {
+  /* the big step: terrain through muted to ink, over the longest runway */
+  --blend: clamp(11rem, 26vw, 20rem);
+  --breathe: clamp(1.5rem, 4vw, 3rem);
+  --bg: linear-gradient(to bottom,
+    var(--terrain),
+    color-mix(in oklab, var(--terrain) 92%, var(--muted)) calc(var(--blend) * .12),
+    color-mix(in oklab, var(--terrain) 65%, var(--muted)) calc(var(--blend) * .28),
+    color-mix(in oklab, var(--terrain) 30%, var(--muted)) calc(var(--blend) * .42),
+    var(--muted) calc(var(--blend) * .55),
+    color-mix(in oklab, var(--muted) 55%, var(--ink)) calc(var(--blend) * .72),
+    color-mix(in oklab, var(--muted) 15%, var(--ink)) calc(var(--blend) * .88),
+    var(--ink) var(--blend));
+}
+
+.principles-section,
+.contact {
+  --bg: var(--ink);
+}
+
+/* light-on-dark text for everything from Path down */
+#path,
+.principles-section,
+.contact,
+.site-footer {
+  --text:      var(--paper);
+  --text-soft: var(--rule);
+  --link:      var(--ochre);
+  --line:      color-mix(in srgb, var(--paper) 16%, transparent);
+  /* stops light text looking heavy or blurry on dark backgrounds (macOS) */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .section-head {
@@ -346,7 +462,7 @@ Tool lists: one shared style under several kinds of content.
   font-size: var(--step-3); font-weight: 800; letter-spacing: -.02em;
 }
 .section-head p {
-  margin-top: .6rem; color: var(--muted);
+  margin-top: .6rem; color: var(--text-soft);
 }
 
 /*
@@ -359,10 +475,10 @@ Tool lists: one shared style under several kinds of content.
   grid-template-columns: minmax(12rem, 1fr) 2fr;
   gap: .5rem 2.5rem;
   padding: 1.6rem 0;
-  border-top: 1px solid var(--rule);
+  border-top: 1px solid var(--line);
 }
 .work-item:last-child {
-  border-bottom: 1px solid var(--rule);
+  border-bottom: 1px solid var(--line);
 }
 .work-item h3 {
   font-size: var(--step-1); font-weight: 600; grid-row: span 2;
@@ -420,10 +536,10 @@ Tool lists: one shared style under several kinds of content.
   grid-template-columns: 9rem 1fr;
   gap: 1.5rem;
   padding: 1rem 0;
-  border-top: 1px solid var(--rule);
+  border-top: 1px solid var(--line);
 }
 .timeline li:last-child {
-  border-bottom: 1px solid var(--rule);
+  border-bottom: 1px solid var(--line);
 }
 
 .when {
@@ -439,7 +555,7 @@ Tool lists: one shared style under several kinds of content.
   font-family: var(--font-display);
 }
 .timeline p {
-  color: var(--muted);
+  color: var(--text-soft);
   margin-top: .25rem;
   max-width: var(--measure);
 }
@@ -460,7 +576,7 @@ Tool lists: one shared style under several kinds of content.
 }
 .principles dd {
   margin: .35rem 0 0;
-  color: var(--muted);
+  color: var(--text-soft);
   max-width: 42ch;
 }
 
@@ -478,7 +594,7 @@ Tool lists: one shared style under several kinds of content.
 .contact > p {
   margin-top: .75rem;
   max-width: var(--measure);
-  color: var(--muted);
+  color: var(--text-soft);
 }
 
 .contact-links {
@@ -497,11 +613,12 @@ Tool lists: one shared style under several kinds of content.
 ---- Footer -------------------------------------------------------------
 */
 .site-footer {
-  border-top: 1px solid var(--rule);
+  background: var(--ink);
+  border-top: 1px solid var(--line);
   padding: 1.5rem var(--gutter);
   text-align: center;
   font-size: var(--step--1);
-  color: var(--muted);
+  color: var(--text-soft);
 }
 
 /*
@@ -564,7 +681,19 @@ Tool lists: one shared style under several kinds of content.
   .site-header nav, .hero-terrain, .hero-actions, .skip {
     display: none;
   }
-  .band {
+  .band,
+  .section,
+  .site-footer {
     background: none;
+  }
+  /* print everything as dark text on white */
+  #path,
+  .principles-section,
+  .contact,
+  .site-footer {
+    --text:      var(--ink);
+    --text-soft: var(--muted);
+    --link:      var(--accent);
+    --line:      var(--rule);
   }
 }
