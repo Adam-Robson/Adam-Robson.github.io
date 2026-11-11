@@ -1,65 +1,66 @@
 <!doctype html>
-<html lang="en">
+<html lang='en'>
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Adam Robson — Brief</title>
-  <meta name="description" content="Adam Robson — Brief. Résumé, selected work, and projects.">
-  <meta name="author" content="Adam Robson">
-  <link rel="canonical" href="https://adam-robson.github.io/">
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <title>Adam Robson</title>
+  <meta name='description' content='Adam Robson: projects & résumé.'>
+  <meta name='author' content='Adam Robson'>
+  <link rel='canonical' href='https://adam-robson.github.io/'>
 
-  <!-- social previews -------------------------------------->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://adam-robson.github.io/">
-  <meta property="og:title" content="Adam Robson — Brief">
-  <meta property="og:description" content="Résumé, selected work, and projects.">
+  <!-- social preview -------------------------------------->
+  <meta property='og:type' content='website'>
+  <meta property='og:url' content="https://adam-robson.github.io/">
+  <meta property="og:title" content="Adam Robson">
+  <meta property="og:description" content="Adam Robson: projects & résumé.">
   <meta property="og:image" content="https://adam-robson.github.io/assets/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
 
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <meta name="theme-color" content="#F7F3EA">
+  <meta name="theme-color" content="#f7f7f7">
 
-  <link rel="preload" href="assets/fonts/SofiaSansSemiCondensed.ttf" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/Karla-VariableFont_wght.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="assets/fonts/Bitter-VariableFont_wght.ttf" as="font" type="font/ttf" crossorigin>
+
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <a class="skip" href="#main">Skip to content</a>
+  <a class='skip' href='#main'>Skip to content</a>
 
-  <header class="site-header">
-    <a class="wordmark" href="#top" aria-label="Adam Robson, back to top">Adam Robson</a>
-    <nav aria-label="sections">
-      <a href="#work">Work</a>
-      <a href="#projects">Projects</a>
-      <a href="#path">Path</a>
-      <a href="#contact">Contact</a>
-    </nav>
+  <header class='site-header'>
+      <a class='wordmark' href='#top' aria-label='Adam Robson, back to top'>
+        <img src="assets/favicon.svg" alt="Adam Robson" class='site-header-logo'>
+      </a>
+      <nav aria-label='sections'>
+        <a href='#work'>Work</a>
+        <a href='#projects'>Projects</a>
+        <a href='#path'>Path</a>
+        <a href='#contact'>Contact</a>
+      </nav>
   </header>
 
-  <main id="main">
+  <main id='main'>
     <!-- Hero ---------------------------------------------------------->
-    <section class="hero" id="top" aria-labelledby="hero-name">
-      <div class="hero-terrain" aria-hidden="true"></div>
-      <div class="hero-inner">
-        <h1 id="hero-name">
-          <img class="hero-image" src="assets/og-image.png" alt="Adam Robson" width="851" height="315" fetchpriority="high">
+    <section class='hero' id='top' aria-labelledby='hero-name'>
+      <div class='hero-terrain' aria-hidden='true'></div>
+      <div class='hero-inner'>
+        <h1 id='hero-name'>
+          <img class='hero-image' src='assets/og-image.png' alt='Adam Robson' width='851' height='315' fetchpriority='high'>
         </h1>
-        <p class="hero-lede">
-          I enjoy building the systems that underpin organizations: data pipelines,
-          automations, and the software that connects them.
+        <p class='hero-lede'>
+          I build systems that keep organizations in rhythm.
         </p>
-        <p class="hero-now">
-          Currently I am a Data Analyst at an organization that is an
-          affordable-housing property management company, where my work
-          spans data engineering, process automation, and Microsoft 365
-          and Azure administration.
+        <p class='hero-now'>
+          As a Data Analyst at an affordable-housing property manager, I work
+          in data engineering and automation with Microsoft 365 and Azure.
         </p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="assets/Adam-Robson-Resume.pdf" target="_blank" rel="noopener">
-            <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#file"/></svg>
+        <div class='hero-actions'>
+          <a class='btn btn-primary' href='assets/Adam-Robson-Resume.pdf' target='_blank' rel='noopener'>
+            <svg class='icon' aria-hidden='true'><use href='assets/icons.svg#file'/></svg>
             View résumé
           </a>
-          <a class="btn btn-quiet" href="assets/Adam-Robson-Resume.pdf" download="Adam-Robson-Resume.pdf">
-            <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#download"/></svg>
+          <a class='btn btn-quiet' href='assets/Adam-Robson-Resume.pdf' download='Adam-Robson-Resume.pdf'>
+            <svg class='icon' aria-hidden='true'><use href='assets/icons.svg#download'/></svg>
             Download PDF
           </a>
         </div>
@@ -67,218 +68,248 @@
     </section>
 
     <!-- Disciplines --------------------------------------------------->
-    <section class="band" aria-labelledby="disciplines-heading">
-      <h2 id="disciplines-heading" class="visually-hidden">What I work on</h2>
-      <div class="disciplines">
-        <article class="discipline">
-          <svg class="discipline-icon" aria-hidden="true"><use href="assets/icons.svg#database"/></svg>
+    <section class='band' aria-labelledby='disciplines-heading'>
+      <h2 id='disciplines-heading' class='visually-hidden'>What I work on</h2>
+      <div class='disciplines'>
+        <article class='discipline'>
+          <svg class='discipline-icon' aria-hidden='true'><use href='assets/icons.svg#database'/></svg>
           <h3>Data</h3>
           <p>
-            Modeling, transforming, and moving data between the systems a business depends on,
-            with an eye on correctness and repeatability.
+            Modeling and moving data between business-critical systems, reliably and repeatably.
           </p>
-          <p class="tools">
+          <p class='tools'>
             SQL/T-SQL, Power Query (M), Power BI, Yardi Voyager, Power Automate, SharePoint Lists
           </p>
         </article>
-        <article class="discipline">
-          <svg class="discipline-icon" aria-hidden="true"><use href="assets/icons.svg#workflow"/></svg>
+        <article class='discipline'>
+          <svg class='discipline-icon' aria-hidden='true'><use href='assets/icons.svg#workflow'/></svg>
           <h3>Automation</h3>
           <p>
-            Replacing manual, error-prone routines with scheduled, logged, auditable processes that
-            other people can trust and maintain.
+            Turning error-prone manual routines into scheduled, logged processes others can trust.
           </p>
-          <p class="tools">
+          <p class='tools'>
             PowerShell, Power Automate, Azure Functions, Azure Blob Storage, Microsoft Entra ID
           </p>
         </article>
-        <article class="discipline">
-          <svg class="discipline-icon" aria-hidden="true"><use href="assets/icons.svg#code"/></svg>
+        <article class='discipline'>
+          <svg class='discipline-icon' aria-hidden='true'><use href='assets/icons.svg#code'/></svg>
           <h3>Software</h3>
           <p>
-            Small, well-organized programs written to SOLID principles, within reason, and shipped as tools other people can use.
+            Small, well-organized programs, shipped as tools people use.
           </p>
-          <p class="tools">
-            TypeScript, Node.js, Python, Bash, YAML and TOML
-          </p>
+          <ul class='tools tools-logos' aria-label='Tools'>
+            <li title='TypeScript'><svg class='logo' aria-hidden='true'><use href='assets/logos.svg#typescript'/></svg><span class='visually-hidden'>TypeScript</span></li>
+            <li title='Node.js'><svg class='logo' aria-hidden='true'><use href='assets/logos.svg#nodedotjs'/></svg><span class='visually-hidden'>Node.js</span></li>
+            <li title='Python'><svg class='logo' aria-hidden='true'><use href='assets/logos.svg#python'/></svg><span class='visually-hidden'>Python</span></li>
+            <li title='Bash'><svg class='logo' aria-hidden='true'><use href='assets/logos.svg#gnubash'/></svg><span class='visually-hidden'>Bash</span></li>
+            <li title='YAML'><svg class='logo' aria-hidden='true'><use href='assets/logos.svg#yaml'/></svg><span class='visually-hidden'>YAML</span></li>
+            <li title='TOML'><svg class='logo' aria-hidden='true'><use href='assets/logos.svg#toml'/></svg><span class='visually-hidden'>TOML</span></li>
+          </ul>
         </article>
       </div>
     </section>
 
     <!-- Selected work ------------------------------------------------->
-    <section class="section" id="work" aria-labelledby="work-heading">
-      <div class="section-head">
-        <h2 id="work-heading">Selected work</h2>
+    <section class='section' id='work' aria-labelledby='work-heading'>
+      <div class='section-head'>
+        <h2 id='work-heading'>Selected work</h2>
         <p>
-          Systems I designed and built in my current role. Details are kept general out of respect for my employer.
+          Systems I built in my current role, described generally out of respect for my employer.
         </p>
       </div>
 
-      <ul class="work-list">
-        <li class="work-item">
+      <ul class='work-list'>
+        <li class='work-item'>
           <h3>Tenant-to-tenant Microsoft 365 migration</h3>
           <p>
-            Built the cloud and device migration tooling for a 400-employee move between Microsoft 365 tenants,
-            coordinating ShareGate copy jobs with PowerShell. The migration completed successfully.
+            Built the migration tooling for a 400-employee move between Microsoft 365 tenants,
+            driving ShareGate with PowerShell.
           </p>
-          <p class="tools">PowerShell, ShareGate, Intune, Entra ID</p>
+          <p class='tools'>PowerShell, ShareGate, Intune, Entra ID</p>
         </li>
-        <li class="work-item">
+        <li class='work-item'>
           <h3>HR-to-directory identity sync</h3>
           <p>
-            A pipeline that reads HR system data and keeps the Microsoft 365 tenant directory current,
-            publishing a log so HR can see which records need correcting at the source.
+            Keeps the Microsoft 365 directory in sync with HR data, and logs which records HR needs to fix.
           </p>
-          <p class="tools">Entra ID, Microsoft 365, SharePoint</p>
+          <p class='tools'>Entra ID, Microsoft 365, SharePoint</p>
         </li>
-        <li class="work-item">
+        <li class='work-item'>
           <h3>Database backup and tiered retention</h3>
           <p>
-            An Azure Function that backs up the property-management system's database to Blob Storage with
-            daily, weekly, monthly, and yearly retention tiers. It meets a five-year retention requirement
-            and kept the work in-house rather than with an outside vendor.
+            Daily-to-yearly database backups to Blob Storage that meet a five-year retention requirement,
+            built in-house instead of outsourced.
           </p>
-          <p class="tools">Azure Functions, SQL Server on Azure, Azure Blob Storage</p>
+          <p class='tools'>Azure Functions, SQL Server on Azure, Azure Blob Storage</p>
         </li>
-        <li class="work-item">
+        <li class='work-item'>
           <h3>Accounting-to-ERP invoice automation</h3>
           <p>
-            Transforms an accounting export into regional import files for the property-management system,
-            archives each run for audit, and delivers the files over SFTP without anyone touching them.
+            Turns accounting exports into ERP import files, archives each run, and delivers them over SFTP
+            hands-free.
           </p>
-          <p class="tools">Power Query (M), Power BI, Power Automate, Azure Storage SFTP</p>
+          <p class='tools'>Power Query (M), Power BI, Power Automate, Azure Storage SFTP</p>
         </li>
-        <li class="work-item">
+        <li class='work-item'>
           <h3>Compliance document pipeline</h3>
           <p>
-            Splits multi-page HUD-50059 certification packets and extracts structured fields to JSON
-            so each form can be filed and archived automatically.
+            Splits HUD-50059 certification packets and extracts their fields to JSON for automatic filing.
           </p>
-          <p class="tools">PDF processing, structured extraction, JSON</p>
+          <p class='tools'>PDF processing, structured extraction, JSON</p>
         </li>
       </ul>
     </section>
 
     <!-- Projects ------------------------------------------------------>
-    <section class="section" id="projects" aria-labelledby="projects-heading">
-      <div class="section-head">
-        <h2 id="projects-heading">Projects</h2>
+    <section class='section' id='projects' aria-labelledby='projects-heading'>
+      <div class='section-head'>
+        <h2 id='projects-heading'>Projects</h2>
         <p>Things I build on my own time.</p>
       </div>
 
-      <div class="projects">
-        <article class="project">
-          <svg class="project-icon" aria-hidden="true"><use href="assets/icons.svg#package"/></svg>
+      <div class='projects'>
+        <article class='project'>
+          <svg class='project-icon' aria-hidden='true'><use href='assets/icons.svg#package'/></svg>
           <h3>Shufffle</h3>
           <p>
-            A zero-dependency, configuration-driven reverse proxy for Node.js. Routes and upstreams are declared in JSON, and it runs either from the command line or embedded in an app.
+            A zero-dependency reverse proxy for Node.js, configured in JSON. Run it from the CLI or embed it in an app.
           </p>
-          <p class="tools">TypeScript, Node.js, published on npm</p>
-          <ul class="links">
-            <li><a href="https://github.com/responsedotok/shufffle" target="_blank" rel="noopener">Source on GitHub<svg class="icon" aria-hidden="true"><use href="assets/icons.svg#arrow"/></svg></a></li>
-            <li><a href="https://www.npmjs.com/package/@responsedotok/shufffle" target="_blank" rel="noopener">Package on npm<svg class="icon" aria-hidden="true"><use href="assets/icons.svg#arrow"/></svg></a></li>
+          <ul class='tools tools-logos' aria-label='Tools'>
+            <li title='TypeScript'><svg class='logo' aria-hidden='true'><use href='assets/logos.svg#typescript'/></svg><span class='visually-hidden'>TypeScript</span></li>
+            <li title='Node.js'><svg class='logo' aria-hidden='true'><use href='assets/logos.svg#nodedotjs'/></svg><span class='visually-hidden'>Node.js</span></li>
+            <li title='npm'><svg class='logo' aria-hidden='true'><use href='assets/logos.svg#npm'/></svg><span class='visually-hidden'>npm</span></li>
+          </ul>
+          <ul class='links'>
+            <li><a href='https://github.com/responsedotok/shufffle' target='_blank' rel='noopener'>Source on GitHub<svg class='icon' aria-hidden='true'><use href='assets/icons.svg#arrow'/></svg></a></li>
+            <li><a href='https://www.npmjs.com/package/@responsedotok/shufffle' target='_blank' rel='noopener'>Package on npm<svg class='icon' aria-hidden='true'><use href='assets/icons.svg#arrow'/></svg></a></li>
           </ul>
         </article>
-        <article class="project">
-          <svg class="project-icon" aria-hidden="true"><use href="assets/icons.svg#code"/></svg>
+        <article class='project'>
+          <svg class='project-icon' aria-hidden='true'><use href='assets/icons.svg#code'/></svg>
           <h3>lefog.xyz</h3>
           <p>
-            A home for the music I write. Audio streams from Cloudflare R2, accounts run through Clerk, and the site deploys from GitHub to Vercel.
+            A home for the music I write, streaming from Cloudflare R2.
           </p>
-          <p class="tools">TypeScript, Cloudflare R2, Clerk, Vercel</p>
-          <ul class="links">
-            <li><a href="https://lefog.xyz" target="_blank" rel="noopener">Visit the site<svg class="icon" aria-hidden="true"><use href="assets/icons.svg#arrow"/></svg></a></li>
+          <ul class='tools tools-logos' aria-label='Tools'>
+            <li title='TypeScript'><svg class='logo' aria-hidden='true'><use href='assets/logos.svg#typescript'/></svg><span class='visually-hidden'>TypeScript</span></li>
+            <li title='Cloudflare R2'><svg class='logo' aria-hidden='true'><use href='assets/logos.svg#cloudflare'/></svg><span class='visually-hidden'>Cloudflare R2</span></li>
+            <li title='Clerk'><svg class='logo' aria-hidden='true'><use href='assets/logos.svg#clerk'/></svg><span class='visually-hidden'>Clerk</span></li>
+            <li title='Vercel'><svg class='logo' aria-hidden='true'><use href='assets/logos.svg#vercel'/></svg><span class='visually-hidden'>Vercel</span></li>
+          </ul>
+          <ul class='links'>
+            <li><a href='https://lefog.xyz' target='_blank' rel='noopener'>Visit the site<svg class='icon' aria-hidden='true'><use href='assets/icons.svg#arrow'/></svg></a></li>
+          </ul>
+        </article>
+        <article class='project'>
+          <svg class='project-icon' aria-hidden='true'><use href='assets/icons.svg#package'/></svg>
+          <h3>Cloud starter template</h3>
+          <p>
+            A full-stack Google Cloud template: Python API and React front end, containerized for Cloud Run, with no service account keys.
+          </p>
+          <ul class='tools tools-logos' aria-label='Tools'>
+            <li title='Python'><svg class='logo' aria-hidden='true'><use href='assets/logos.svg#python'/></svg><span class='visually-hidden'>Python</span></li>
+            <li title='FastAPI'><svg class='logo' aria-hidden='true'><use href='assets/logos.svg#fastapi'/></svg><span class='visually-hidden'>FastAPI</span></li>
+            <li title='TypeScript'><svg class='logo' aria-hidden='true'><use href='assets/logos.svg#typescript'/></svg><span class='visually-hidden'>TypeScript</span></li>
+            <li title='React'><svg class='logo' aria-hidden='true'><use href='assets/logos.svg#react'/></svg><span class='visually-hidden'>React</span></li>
+            <li title='Vite'><svg class='logo' aria-hidden='true'><use href='assets/logos.svg#vite'/></svg><span class='visually-hidden'>Vite</span></li>
+            <li title='Docker'><svg class='logo' aria-hidden='true'><use href='assets/logos.svg#docker'/></svg><span class='visually-hidden'>Docker</span></li>
+            <li title='Google Cloud Run'><svg class='logo' aria-hidden='true'><use href='assets/logos.svg#googlecloud'/></svg><span class='visually-hidden'>Google Cloud Run</span></li>
+            <li title='Firestore'><svg class='logo' aria-hidden='true'><use href='assets/logos.svg#firebase'/></svg><span class='visually-hidden'>Firestore</span></li>
+            <li title='GitHub Actions'><svg class='logo' aria-hidden='true'><use href='assets/logos.svg#githubactions'/></svg><span class='visually-hidden'>GitHub Actions</span></li>
+          </ul>
+          <ul class='links'>
+            <li><a href='https://github.com/Adam-Robson/cloud-starter-template' target='_blank' rel='noopener'>Source on GitHub<svg class='icon' aria-hidden='true'><use href='assets/icons.svg#arrow'/></svg></a></li>
           </ul>
         </article>
       </div>
     </section>
 
     <!-- Path ---------------------->
-    <section class="section" id="path" aria-labelledby="path-heading">
-      <div class="section-head">
-        <h2 id="path-heading">Path</h2>
-        <p>I came to engineering from the law, where precision, documentation, and deadlines are not optional. That habit came with me.</p>
+    <section class='section' id='path' aria-labelledby='path-heading'>
+      <div class='section-head'>
+        <h2 id='path-heading'>Path</h2>
+        <p>I came to engineering from law, where precision and deadlines aren't optional. The habit stuck.</p>
       </div>
 
-      <ol class="timeline">
+      <ol class='timeline'>
         <li>
-          <span class="when">2023 – now</span>
+          <span class='when'>2023 – now</span>
           <div>
             <h3>Data Analyst, CCI</h3>
-            <p>Joined in 2023. Data, automation, and Microsoft 365 and Azure engineering.</p>
+            <p>Data, automation, and Microsoft 365 and Azure engineering.</p>
           </div>
         </li>
         <li>
-          <span class="when">2021 – 2022</span>
+          <span class='when'>2021 – 2022</span>
           <div>
             <h3>Full-stack development, Alchemy Code Lab</h3>
-            <p>An intensive 18-month program in JavaScript, APIs, and web development.</p>
+            <p>An 18-month intensive in JavaScript, APIs, and web development.</p>
           </div>
         </li>
         <li>
-          <span class="when">2020 – 2021</span>
+          <span class='when'>2020 – 2021</span>
           <div>
             <h3>Practice Assistant, K&amp;L Gates LLP</h3>
           </div>
         </li>
         <li>
-          <span class="when">2017 – 2020</span>
+          <span class='when'>2017 – 2020</span>
           <div>
             <h3>Legal Assistant, James F. Ambrose, P.C.</h3>
           </div>
         </li>
         <li>
-          <span class="when">Earlier</span>
+          <span class='when'>Earlier</span>
           <div>
-            <h3>BA in Philosophy from San Francisco State University</h3>
+            <h3>BA in Philosophy, San Francisco State University</h3>
           </div>
         </li>
       </ol>
     </section>
 
     <!-- Principles -------------->
-    <section class="section principles-section" aria-labelledby="principles-heading">
-      <div class="section-head">
-        <h2 id="principles-heading">How I like to design &amp; build</h2>
+    <section class='section principles-section' aria-labelledby='principles-heading'>
+      <div class='section-head'>
+        <h2 id='principles-heading'>How I build</h2>
       </div>
-      <dl class="principles">
+      <dl class='principles'>
         <div>
           <dt>Separate concerns</dt>
-          <dd>Break a system into parts that each do one job, so any part can change without the others noticing.</dd>
+          <dd>Each part does one job and can change without breaking the others.</dd>
         </div>
         <div>
           <dt>Don't repeat yourself</dt>
-          <dd>Pull shared logic into one place, but only once the repetition is real rather than imagined.</dd>
+          <dd>Consolidate shared logic once the repetition is real, not imagined.</dd>
         </div>
         <div>
           <dt>Keep it simple</dt>
-          <dd>Prefer the design that the next person can read and maintain over one that is merely clever.</dd>
+          <dd>Readable and maintainable beats clever.</dd>
         </div>
         <div>
           <dt>Material honesty</dt>
-          <dd>Let the tools and data be what they are. Work with their grain instead of disguising it.</dd>
+          <dd>Work with the grain of the tools and data, not against it.</dd>
         </div>
       </dl>
     </section>
 
     <!-- Contact ------------------------------------------------------->
-    <section class="section contact" id="contact" aria-labelledby="contact-heading">
-      <h2 id="contact-heading">Let's talk</h2>
-      <p>If you'd like to collaborate, or are curious about something here, LinkedIn is the fastest way to reach me.</p>
-      <ul class="contact-links">
-        <li><a href="https://linkedin.com/in/adamrayrobson" target="_blank" rel="noopener">LinkedIn<svg class="icon" aria-hidden="true"><use href="assets/icons.svg#arrow"/></svg></a></li>
-        <li><a href="https://github.com/adam-robson" target="_blank" rel="noopener">GitHub<svg class="icon" aria-hidden="true"><use href="assets/icons.svg#arrow"/></svg></a></li>
-        <li><a href="https://x.com/adamrayrobson" target="_blank" rel="noopener">X<svg class="icon" aria-hidden="true"><use href="assets/icons.svg#arrow"/></svg></a></li>
-        <li><a href="assets/Adam-Robson-Resume.pdf" download="Adam-Robson-Resume.pdf">Résumé (PDF)<svg class="icon" aria-hidden="true"><use href="assets/icons.svg#download"/></svg></a></li>
+    <section class='section contact' id='contact' aria-labelledby='contact-heading'>
+      <h2 id='contact-heading'>Let's talk</h2>
+      <p>Want to collaborate or ask about something here? LinkedIn is the fastest way to reach me.</p>
+      <ul class='contact-links'>
+        <li><a href='https://linkedin.com/in/adamrayrobson' target='_blank' rel='noopener'>LinkedIn<svg class='icon' aria-hidden='true'><use href='assets/icons.svg#arrow'/></svg></a></li>
+        <li><a href='https://github.com/adam-robson' target='_blank' rel='noopener'>GitHub<svg class='icon' aria-hidden='true'><use href='assets/icons.svg#arrow'/></svg></a></li>
+        <li><a href='https://x.com/adamrayrobson' target='_blank' rel='noopener'>X<svg class='icon' aria-hidden='true'><use href='assets/icons.svg#arrow'/></svg></a></li>
+        <li><a href='assets/Adam-Robson-Resume.pdf' download='Adam-Robson-Resume.pdf'>Résumé (PDF)<svg class='icon' aria-hidden='true'><use href='assets/icons.svg#download'/></svg></a></li>
         <!--
-        <li><a href="mailto:you@example.com">Email</a></li>
+        <li><a href='mailto:you@example.com'>Email</a></li>
         -->
       </ul>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <p>© 2026 Adam Robson. Hand-written HTML and CSS, served by GitHub Pages.</p>
+  <footer class='site-footer'>
+    <p>© 2026 Adam Robson. Hand-written HTML and CSS on GitHub Pages.</p>
   </footer>
 </body>
 </html>

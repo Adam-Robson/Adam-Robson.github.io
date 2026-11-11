@@ -20,9 +20,10 @@ css/styles.css          design tokens, then styles section by section
 assets/
   Adam-Robson-Resume.pdf   résumé linked from the page
   icons.svg                icon sprite (Lucide, ISC license)
+  logos.svg                tool logo sprite (Simple Icons, CC0; marks belong to their owners)
   favicon.svg
   og-image.png             link-preview image (1200 × 630)
-  fonts/                   self-hosted Sofia Sans Semi-Condensed
+  fonts/                   self-hosted Karla (body) and Bitter (headings)
 .nojekyll              tell GitHub Pages to skip Jekyll processing
 ```
 
